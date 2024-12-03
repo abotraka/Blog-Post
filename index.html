@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogIt - Your Blog Post Title</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3>Recent Articles</h3>
+                <ul class="article-list">
+                    <li><a href="#mobile-development" onclick="loadArticle('mobile-development')">Mobile App Development Guide</a></li>
+                    <li><a href="#data-science" onclick="loadArticle('data-science')">Introduction to Data Science</a></li>
+                    <li><a href="#cybersecurity" onclick="loadArticle('cybersecurity')">Cybersecurity Essentials</a></li>
+                    <li><a href="#cloud-computing" onclick="loadArticle('cloud-computing')">Cloud Computing Fundamentals</a></li>
+                    <li><a href="#machine-learning" onclick="loadArticle('machine-learning')">Machine Learning for Beginners</a></li>
+                    <li><a href="#blockchain" onclick="loadArticle('blockchain')">Understanding Blockchain Technology</a></li>
+                    <li><a href="#web-development" onclick="loadArticle('web-development')">Getting Started with Web Development</a></li>
+                    <li><a href="#productivity-tips" onclick="loadArticle('productivity-tips')">10 Tips for Better Productivity</a></li>
+                    <li><a href="#ai-technology" onclick="loadArticle('ai-technology')">The Future of AI Technology</a></li>
+                    <li><a href="#modern-design" onclick="loadArticle('modern-design')">Best Practices in Modern Design</a></li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3>Featured Posts</h3>
+                <div class="featured-posts">
+                    <div class="featured-post" onclick="loadArticle('machine-learning')" style="cursor: pointer;">
+                        <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=300&h=200" alt="Machine Learning">
+                        <h4>Machine Learning for Beginners</h4>
+                        <p>Start your journey into AI and machine learning...</p>
+                    </div>
+                    <div class="featured-post" onclick="loadArticle('cybersecurity')" style="cursor: pointer;">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=300&h=200" alt="Cybersecurity">
+                        <h4>Cybersecurity Essentials</h4>
+                        <p>Learn how to protect yourself in the digital age...</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <article class="blog-post">
+                <div class="header-image">
+                    <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1200&h=400" alt="Blog header image showing a laptop with coffee">
+                </div>
+                <div class="post-content">
+                    <h1 class="post-title">Welcome to BlogIt</h1>
+                    <div class="post-meta">
+                        <span class="author">By BlogIt Team</span>
+                        <span class="date">Published on March 13, 2024</span>
+                    </div>
+                    <div class="post-body">
+                        <p>Welcome to BlogIt! Click on any article in the sidebar to start reading. We've curated some of the best content for you to explore.</p>
+                        
+                        <h2>Featured Content</h2>
+                        <p>Check out our featured articles about web development, productivity, AI technology, and modern design. Each article is carefully written by experts in their respective fields.</p>
+                        
+                        <h2>Getting Started</h2>
+                        <p>Navigate through our articles using the sidebar menu. You can find recent articles at the top and featured posts below them. Click any article to read its full content.</p>
+                    </div>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="copyright">
+                2024 BlogIt. All rights reserved.
+            </div>
+            <div class="current-time" id="current-time">
+                Loading time...
+            </div>
+        </div>
+    </footer>
+
+    <script src="articles.js"></script>
+    <script>
+        function updateTime() {
+            const timeElement = document.getElementById('current-time');
+            const now = new Date();
+            timeElement.textContent = now.toLocaleTimeString();
+        }
+        
+        // Update time immediately and then every second
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+</html>
